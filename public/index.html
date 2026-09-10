@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="q89nqYv6simLs4sIZJbLjz">
+<head data-page-node-id="NGIQbytIZ7cjjimtwVREuB">
+<meta charset="utf-8" data-page-node-id="TFZT4MyfA9l6JYoJoSBCxv">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="qrcYviG8QpDMFnqmcvNYQm">
+<title>天元之奕 · 补位推荐</title>
+<link rel="stylesheet" href="/style.css" data-page-node-id="NU1MjPAgYtRGS0jDs8uvBv">
+</head>
+<body data-page-node-id="hyMHDKNquf1xANvQ8ecBM7">
+
+<header class="top" data-page-node-id="vvQKwLc5071dnLISdb3c8j">
+  <div class="wrap" data-page-node-id="jINF80rq163wWqbJ951y9C">
+    <div class="brand" data-page-node-id="7dFiEbmpUvTxN8GAwP6JaF">
+      <h1 data-page-node-id="DpX8jbNDCtGGhLQ4imPRuz">天元之奕 · <span data-page-node-id="EO9YiygoHCm9VXdGrJibS1">补位推荐</span></h1>
+      <p data-page-node-id="JjhoYxvBvevzCR3bOe7oIZ">选好已定英雄，指定待补分路，给出剩余位置胜率最高的 Top10 补位方案</p>
+    </div>
+    <div class="top-right" data-page-node-id="AyVaupTi8sB0aJwTNC5Ir7">
+      <span class="pill" data-page-node-id="YBvx9DW7VVGx6GMUphlGCr">数据日期 <b id="dataDate" data-page-node-id="laiLd3i7G6FUQxcjGchDWB">—</b></span>
+      <span class="pill" data-page-node-id="a4FsYGw7Nc7mOCIiZmE8ue">英雄池 <b id="heroCount" data-page-node-id="4BF0HF5SDedci88s3vMs1u">—</b></span>
+      <span class="pill" id="modePill" data-page-node-id="1aaZqTflN9QHnTZgSrdu44">数据源 <b data-page-node-id="eHhvlBkhFMyjIbQHVHyPof">快照</b></span>
+      <button id="refreshBtn" data-page-node-id="nBfa4BvV7XsfFls11l6ueH">刷新数据</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" data-page-node-id="E66n2KLExXgzghtysbDRVy">
+  <div id="notice" data-page-node-id="eCiAhPhm5GAZcGpXldBguI"></div>
+
+  <div class="layout" data-page-node-id="Bixc6koy8CC1U2kCrfcKb8">
+    <div data-page-node-id="8CcqbIJdJSCkX1VT61u0sc">
+      <section class="panel" style="margin-bottom:16px" data-page-node-id="s3PHcjpjqu7O3kTMvIx7Vd">
+        <h2 data-page-node-id="i6tC0OhTzYis5Z5bGDXr6n">1. 已选英雄<span class="hint" id="selHint" data-page-node-id="lyaT6u0ZNRFrkELavL7Kfs">可留空（留空则只按分路胜率排）</span></h2>
+        <div class="body" data-page-node-id="k6oyHXJVK0I2845YdluI14">
+          <div class="chips" id="selChips" data-page-node-id="YhVwefCyRn3dw2G591HwXZ"></div>
+        </div>
+      </section>
+
+      <section class="panel" data-page-node-id="49KamqWluMhV2VSjYqqdFe">
+        <h2 data-page-node-id="jaancm7Ku8tJbY69dniBCt">英雄池<span class="hint" id="poolHint" data-page-node-id="X2kIth6QkN2xliyxlfufD7"></span></h2>
+        <div class="body" data-page-node-id="0k2clXTAv1QtcBGAE54dMK">
+          <div class="seg" id="poolLanes" data-page-node-id="NHhRdkCU0NLoXMiw9LC1qk"></div>
+          <div style="margin-top:10px" data-page-node-id="snX4keg5TNYaX8Iqv4Fddv">
+            <input type="search" id="search" placeholder="搜索英雄名…" autocomplete="off" data-page-node-id="8OELSCEYgzUGee8GMMX1bM">
+          </div>
+          <div class="grid" id="heroGrid" data-page-node-id="yA8du9Dq6h1ZX6DSnZps1u"></div>
+        </div>
+      </section>
+    </div>
+
+    <div data-page-node-id="DEhexG412DcDCvT8vATCKU">
+      <section class="panel" style="margin-bottom:16px" data-page-node-id="1O2KpJsL4lrCBLf9WQgG7A">
+        <h2 data-page-node-id="FWYVbNwDGlvLBhGdcP08R3">2. 目标分路<span class="hint" data-page-node-id="t4sQ9CuG11ezf5Foqux5v1">选 N 个分路 = 输出一整套 N 人补位组合的 Top10</span></h2>
+        <div class="body" data-page-node-id="I4w7NEYfPnSxWDDJaEBuBZ">
+          <div class="seg" id="lanePick" data-page-node-id="p68X2hBdQnJDBtFXihMopT"></div>
+
+          <div class="field" style="margin-top:16px" data-page-node-id="modeField">
+            <label data-page-node-id="modeLabelWrap">参考段位：<b id="modeName" data-page-node-id="modeNameId">巅峰千强</b><span class="hint" data-page-node-id="modeHintId">用于英雄池排序与全局胜率/出场率；分路胜率、协同指数站点仅提供巅峰千强口径</span></label>
+            <div class="seg" id="modePick" data-page-node-id="modePickId"></div>
+          </div>
+
+          <div class="field" style="margin-top:16px" data-page-node-id="UuocXZS9zg3DmHWn3xOFNP">
+            <label data-page-node-id="IOD7Z8VrSLJxC23vyD76H5">排序权重：<b id="wWinLabel" data-page-node-id="R5lVTDGug4cmnAujEtccQA">65%</b> 分路胜率 + <b id="wSynLabel" data-page-node-id="WF98y5QOVZfVl82Ltrfkev">35%</b> 协同指数</label>
+            <input type="range" id="wWin" min="0" max="100" value="65" data-page-node-id="vw14dIEguYvbtUQYHmI4uY">
+          </div>
+          <div class="field" data-page-node-id="wPairField">
+            <label data-page-node-id="wPairLabelWrap">组合内协同：<b id="wPairLabel" data-page-node-id="wPairLabelId">25%</b> 新英雄之间的配合 + <b id="wPairRestLabel" data-page-node-id="wPairRestLabelId">75%</b> 成员自身得分</label>
+            <input type="range" id="wPair" min="0" max="100" value="25" data-page-node-id="wPairInput">
+          </div>
+          <div class="field" data-page-node-id="VRciBPzfs4HxlPp5rXqAGN">
+            <label data-page-node-id="pvrHl0iOPnRk4Cw3ggny52">样本量加权：<b id="shrinkLabel" data-page-node-id="UIco6pKDEXwNHgCAP8ADLd">30%</b>　越高越压制冷门小样本英雄</label>
+            <input type="range" id="shrink" min="0" max="100" value="30" data-page-node-id="9GGlkOAzYueeQ9mlx62X2j">
+          </div>
+          <div class="field" data-page-node-id="dedupField">
+            <label class="check" data-page-node-id="dedupLabelWrap">
+              <input type="checkbox" id="dedup" data-page-node-id="dedupInput">
+              同一英雄在榜上只出现一次（关闭＝严格按分数排，允许同一英雄在多个方案里重复）
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <div class="results" id="results" data-page-node-id="bWIlDnNlRUi4U27cAnTe3z"></div>
+    </div>
+  </div>
+
+  <footer class="foot" id="foot" data-page-node-id="jjgvM7A6cpThECp8rnj0rH"></footer>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

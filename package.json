@@ -1,0 +1,11 @@
+{
+  "name": "tyzy-draft-advisor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "天元之奕补位推荐 WebUI —— 给定已选英雄与目标分路，输出各分路 Top10 英雄排行",
+  "scripts": {
+    "start": "node server.mjs",
+    "fetch": "node scripts/fetch-data.mjs"
+  }
+}
